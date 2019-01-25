@@ -1,0 +1,62 @@
+type Query {
+  # courtCase: CourtCase
+  person: Person
+
+  # publishedPosts: [Post!]!
+  # post(postId: ID!): Post
+  # postsByUser(userId: ID!): [Post!]!
+}
+
+type CourtCase {
+  id: ID!
+  plaintiff: Plaintiff!
+  defendant: Defendant!
+  lawyer: Lawyer!
+}
+type Person {
+  id: ID!
+  firstName: String!
+  lastName: String!
+}
+type Lawyer {
+  id: ID!
+  person: Person!
+}
+
+type Plaintiff {
+  id: ID!
+  person: Person!
+}
+
+type Defendant {
+  id: ID!
+  person: Person!
+}
+
+type Mutation {
+  # createCourtCase(
+  #   plaintiff: Plaintiff!
+  #   defendant: Defendant!
+  #   lawyer: Lawyer!
+  # ): CourtCase
+
+  createPerson(firstName: String!, lastName: String!): Person
+
+  # createUser(name: String!): User
+  # createDraft(title: String!, userId: ID!): Post
+  # publish(postId: ID!): Post
+}
+
+# type User {
+#   id: ID!
+#   email: String
+#   name: String!
+#   posts: [Post!]!
+# }
+
+# type Post {
+#   id: ID!
+#   title: String!
+#   published: Boolean!
+#   author: User
+# }

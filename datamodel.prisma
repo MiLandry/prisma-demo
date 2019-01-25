@@ -1,0 +1,46 @@
+type Person {
+  id: ID! @id @unique
+  firstName: String
+  lastName: String
+  # casesAsPlaintiff: [CourtCase] @relation(name: "Plaintiff")
+  # casesAsPlaintiff: [CourtCase] @relation(link: INLINE)
+  # casesAsDefendant: [CourtCase] @relation(name: "Defendant")
+  # casesAsDefendant: [CourtCase] @relation(link: INLINE)
+}
+
+type Plaintiff {
+  id: ID! @id @unique
+  person: Person @relation(link: INLINE)
+}
+
+type Defendant {
+  id: ID! @id @unique
+  person: Person @relation(link: INLINE)
+}
+
+type Lawyer {
+  id: ID! @id @unique
+  person: Person @relation(link: INLINE)
+}
+
+type CourtCase {
+  id: ID! @id
+  plaintiff: Plaintiff! @relation(link: INLINE)
+  # plaintiff: Person! @relation(link: INLINE)
+  defendant: Defendant! @relation(link: INLINE)
+  # defendant: Person! @relation(link: INLINE)
+  lawyer: Lawyer! @relation(link: INLINE)
+}
+
+# type User {
+#   id: ID! @unique @id
+#   writtenStories: [Story!]! @relation(name: "WrittenStories")
+#   likedStories: [Story!]! @relation(name: "LikedStories")
+# }
+
+# type Story {
+#   id: ID! @unique @id
+#   text: String!
+#   author: User! @relation(name: "WrittenStories")
+#   likedBy: [User!]! @relation(name: "LikedStories")
+# }
