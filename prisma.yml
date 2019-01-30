@@ -1,4 +1,5 @@
-endpoint: http://localhost:4466
+# endpoint: http://localhost:4466
+endpoint: https://us1.prisma.sh/michael-landry-9edd0b/prisma-demo/dev
 datamodel: datamodel.prisma
 generate:
   - generator: javascript-client
@@ -6,3 +7,12 @@ generate:
 hooks:
   post-deploy:
     - prisma generate
+#dev
+# datamodel: datamodel.prisma
+
+# generate:
+#   - generator: typescript-client
+#     output: ./generated/prisma-client/
+
+# endpoint: ${env:PRISMA_ENDPOINT}
+# secret: ${env:PRISMA_SECRET}
