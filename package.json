@@ -8,6 +8,7 @@
     "prisma-client-lib": "^1.25.1"
   },
   "scripts": {
+    "build": "prisma generate",
     "start": "node index.js"
   }
 }
