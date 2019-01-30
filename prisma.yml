@@ -1,4 +1,3 @@
-# endpoint: http://localhost:4466
 endpoint: https://us1.prisma.sh/michael-landry-9edd0b/prisma-demo/dev
 datamodel: datamodel.prisma
 generate:

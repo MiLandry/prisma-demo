@@ -9,6 +9,6 @@
   },
   "scripts": {
     "build": "prisma generate",
-    "start": "node index.js"
+    "start": "prisma generate && node index.js"
   }
 }
